@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ssopfa.controllers.MainViewUser">
+    <children>
+        <AnchorPane layoutY="85.0" prefHeight="315.0" prefWidth="700.0" style="-fx-background-color: #D2F4FF;" styleClass="sidebar" stylesheets="@style.css" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="85.0">
+            <children>
+                <AnchorPane layoutX="141.0" layoutY="14.0" prefHeight="78.0" prefWidth="420.0" styleClass="col">
+                    <children>
+                        <Label layoutX="100.0" layoutY="8.0" text="Добро пожаловать," textFill="#ffa100">
+                            <font>
+                                <Font name="Century" size="24.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="name" layoutX="96.0" layoutY="39.0" prefHeight="30.0" prefWidth="227.0" textAlignment="CENTER" textFill="#ffa100">
+                            <font>
+                                <Font name="Century" size="24.0" />
+                            </font>
+                        </Label>
+                    </children></AnchorPane>
+                <Button fx:id="toMenu" layoutX="259.0" layoutY="120.0" mnemonicParsing="false" onAction="#onMenu" prefHeight="52.0" prefWidth="184.0" text="Меню">
+                    <font>
+                        <Font name="Century" size="18.0" />
+                    </font>
+                </Button>
+                <Button fx:id="toBasket" layoutX="263.0" layoutY="201.0" mnemonicParsing="false" onAction="#onBasket" prefHeight="52.0" prefWidth="175.0" text="Корзина">
+                    <font>
+                        <Font name="Century" size="18.0" />
+                    </font></Button>
+            </children>
+        </AnchorPane>
+        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="230.0" layoutY="2.0" prefHeight="85.0" prefWidth="239.0" text="Пиццерия" textFill="#ffa100" AnchorPane.leftAnchor="230.0" AnchorPane.rightAnchor="230.0" AnchorPane.topAnchor="2.0">
+            <font>
+                <Font name="Century" size="39.0" />
+            </font>
+        </Label>
+        <Button fx:id="exitButton" focusTraversable="false" layoutX="540.0" layoutY="25.0" mnemonicParsing="false" onAction="#onExit" prefHeight="35.0" prefWidth="138.0" stylesheets="@style.css" text="Выход" textFill="WHITE" AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="25.0">
+            <font>
+                <Font name="Century" size="18.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+            <effect>
+                <InnerShadow>
+                    <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                    </color></InnerShadow>
+            </effect>
+        </Button>
+        <ImageView fitHeight="85.0" fitWidth="100.0" layoutX="38.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <image>
+                <Image url="@../../../images/logo.png" />
+            </image>
+        </ImageView>
+    </children>
+    <stylesheets>
+        <URL value="@style.css" />
+        <URL value="@style.css" />
+    </stylesheets>
+    <styleClass>
+        <String fx:value="col" />
+        <String fx:value="root" />
+    </styleClass>
+</AnchorPane>
