@@ -2,23 +2,28 @@ package com.example.ssopfa;
 
 import com.example.ssopfa.entities.*;
 import javafx.application.Application;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
+import java.util.Objects;
 
-public class Main  extends Application  {
+
+public class Main extends Application {
 
     private static Admin admin;
 
     private static Customer customer;
     private static Stage primaryStage;
+
     public static Admin getAdmin() {
         return admin;
     }
@@ -26,6 +31,7 @@ public class Main  extends Application  {
     public static Customer getCustomer() {
         return customer;
     }
+
     public static void setAdmin(Admin admin) {
         Main.admin = admin;
     }
@@ -38,23 +44,25 @@ public class Main  extends Application  {
     @Override
     public void start(Stage stage) throws IOException {
 //        List<User> arrayList = new ArrayList<>();
-//        arrayList.add(new Admin("pashpashovich","pasha22",true));
-//        arrayList.add(new Admin("pasha1","pasha12",true));
-//        arrayList.add(new Admin("pasha2","pasha12",true));
-//        arrayList.add(new Customer("pasha3","pasha13","Косович Павел Владимирович", true,null));
-//        arrayList.add(new Customer("pasha4","pasha13","Косович ВАпро ТоПАв",false,null));
-//        arrayList.add(new Customer("pasha5","pasha13","Косович Вjhпро ТоПАв",false,null));
+//        arrayList.add(new Admin("ssopfa","ssopfa1",true));
+//        arrayList.add(new Admin("ssopfa1","ssopfa1",true));
+//        arrayList.add(new Admin("ssopfa2","ssopfa1",true));
+//        arrayList.add(new Customer("ssopfa3","ssopfa2","Ахрамович Софья Павловна", true,null));
+//        arrayList.add(new Customer("ssopfa4","ssopfa3","Ахрамович НеСофья НеПавловна",false,null));
+//        arrayList.add(new Customer("ssopfa5","ssopfa4","Ахрамович Софья НеПавловна",false,null));
 //        SerializationOfUsers.serializator((ArrayList<User>) arrayList);
 //        PizzaList pizzaList = new PizzaList();
 //        SerializationOfPizzas.serializator((ArrayList<Pizza>) PizzaList.getPizzaList());
         primaryStage = stage;
-        primaryStage.setResizable(false);
-        Image image = new Image(getClass().getResource("/images/logo.png").toExternalForm());
+        Image image = new Image(Objects.requireNonNull(getClass().getResource("/images/logo.png")).toExternalForm());
         stage.getIcons().add(image);
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("authorization.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        scene.getStylesheets().add(Main.class.getResource("/com/example/ssopfa/style.css").toExternalForm());
+        primaryStage.sizeToScene();
+        scene.getStylesheets().add(Objects.requireNonNull(Main.class.getResource("/com/example/ssopfa/style.css")).toExternalForm());
         stage.setTitle("Авторизация");
+        stage.setMinHeight(400);
+        stage.setMinWidth(700);
         stage.sizeToScene();
         stage.setScene(scene);
         stage.show();
@@ -154,6 +162,18 @@ public class Main  extends Application  {
             Parent root = loader.load();
             primaryStage.setScene(new Scene(root));
             primaryStage.setTitle("Корзина");
+            primaryStage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void showEditPizzas() {
+        try {
+            FXMLLoader loader = new FXMLLoader(Main.class.getResource("editPizza.fxml"));
+            Parent root = loader.load();
+            primaryStage.setScene(new Scene(root));
+            primaryStage.setTitle("Редактирование");
             primaryStage.show();
         } catch (Exception e) {
             e.printStackTrace();

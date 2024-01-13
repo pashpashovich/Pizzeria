@@ -1,7 +1,6 @@
 package com.example.ssopfa.controllers;
 
 
-
 import com.example.ssopfa.Main;
 import com.example.ssopfa.entities.Admin;
 import com.example.ssopfa.entities.Alerts;
@@ -30,12 +29,15 @@ public class SignUp {
     @FXML
     private Button signInButton;
 
+    @FXML
+    private Button exit;
+
 
     @FXML
     private void onSigUpButtonClick(ActionEvent event) throws IOException {
         String inLogin = login.getText();
         String inPassword = password.getText();
-        String inFio=fio.getText();
+        String inFio = fio.getText();
         if (inLogin.isEmpty() || inPassword.isEmpty() || inFio.isEmpty()) {
             Alerts.showNotificationAlert("Заполните все поля");
             return;
@@ -45,17 +47,21 @@ public class SignUp {
             Alerts.showNotificationAlert("Такой логин уже существует");
             return;
         }
-        Admin.addUser(inLogin,inPassword,inFio);
+        Admin.addUser(inLogin, inPassword, inFio);
         Alerts.showSuccessAlert("Регистрация прошла успешно!");
         Main.showSignIn();
 
     }
 
 
-
     @FXML
     private void onSigInButtonClick(ActionEvent event) throws IOException {
         Main.showSignIn();
+    }
+
+    @FXML
+    private void toExit(ActionEvent event) throws IOException {
+        System.exit(0);
     }
 
 }

@@ -8,7 +8,7 @@ public class Customer extends User implements Serializable {
     /**
      * Surname, name, patronymic surname of the customer
      */
-    private String FIO;
+    private final String FIO;
     /**
      * Has access to the app or not
      */
@@ -33,7 +33,7 @@ public class Customer extends User implements Serializable {
     }
 
     public double calculateCartSum() {
-        if (cart==null) cart=new ArrayList<>();
+        if (cart == null) cart = new ArrayList<>();
         if (!cart.isEmpty()) {
             cartSum = 0;
             Calculable calc = p -> cartSum + p.getPrice();
@@ -48,7 +48,7 @@ public class Customer extends User implements Serializable {
         return cart;
     }
 
-    public boolean removeFromCart(String name, double size, double price) throws IOException {
+    public void removeFromCart(String name, double size, double price) throws IOException {
         if (!cart.isEmpty()) {
             Pizza pizzaToRemove = null;
             for (Pizza pizza : cart) {
@@ -60,12 +60,7 @@ public class Customer extends User implements Serializable {
             if (pizzaToRemove != null) {
                 cart.remove(pizzaToRemove);
                 Admin.resetExactCustomer(this);
-                return true;
-            } else {
-                return false;
             }
-        } else {
-            return false;
         }
     }
 }

@@ -15,28 +15,28 @@
         <AnchorPane layoutY="85.0" prefHeight="315.0" prefWidth="700.0" style="-fx-background-color: #D2F4FF;" styleClass="sidebar" stylesheets="@style.css" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="85.0">
          <children>
       
-              <TableView fx:id="userTableView" layoutX="14.0" layoutY="42.0" prefHeight="167.0" prefWidth="464.0">
+              <TableView fx:id="userTableView" layoutX="14.0" layoutY="42.0" prefHeight="167.0" prefWidth="464.0" styleClass="table" AnchorPane.leftAnchor="14.0">
                   <columns>
                       <TableColumn fx:id="loginColumn" prefWidth="153.19998168945312" text="Логин" />
                       <TableColumn fx:id="roleColumn" minWidth="0.0" prefWidth="161.59999084472656" text="Роль" />
                       <TableColumn fx:id="accessColumn" minWidth="0.0" prefWidth="159.20001220703125" text="Доступ" />
                   </columns>
               </TableView>
-            <Button fx:id="delButton" layoutX="494.0" layoutY="42.0" mnemonicParsing="false" onAction="#onDel" prefHeight="43.0" prefWidth="194.0" text="Удалить пользователя">
+            <Button fx:id="delButton" layoutX="494.0" layoutY="42.0" mnemonicParsing="false" onAction="#onDel" prefHeight="43.0" prefWidth="194.0" text="Удалить пользователя" AnchorPane.leftAnchor="494.0" AnchorPane.rightAnchor="12.600000000000023">
                <font>
                   <Font name="Century" size="14.0" />
                </font></Button>
-            <Button layoutX="494.0" fx:id="chButton" onAction="#onAccess" layoutY="104.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="194.0" text="Изменить режим доступа">
+            <Button fx:id="chButton" layoutX="494.0" layoutY="104.0" mnemonicParsing="false" onAction="#onAccess" prefHeight="43.0" prefWidth="194.0" text="Изменить режим доступа" AnchorPane.leftAnchor="494.0" AnchorPane.rightAnchor="12.600000000000023">
                <font>
                   <Font name="Century" size="14.0" />
                </font>
             </Button>
-            <Button layoutX="494.0" fx:id="upButton" onAction="#onUpgrade" layoutY="165.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="194.0" text="Повысить до админа">
+            <Button fx:id="upButton" layoutX="494.0" layoutY="165.0" mnemonicParsing="false" onAction="#onUpgrade" prefHeight="43.0" prefWidth="194.0" text="Повысить до админа" AnchorPane.leftAnchor="494.0" AnchorPane.rightAnchor="12.600000000000023">
                <font>
                   <Font name="Century" size="14.0" />
                </font>
             </Button>
-            <Button layoutX="273.0" layoutY="236.0" fx:id="toMain" onAction="#onMain" mnemonicParsing="false" prefHeight="55.0" prefWidth="188.0" text="Выход в главное меню">
+            <Button fx:id="toMain" layoutX="152.0" layoutY="230.0" mnemonicParsing="false" onAction="#onMain" prefHeight="55.0" prefWidth="188.0" text="Выход в главное меню" AnchorPane.leftAnchor="152.0" AnchorPane.rightAnchor="361.0">
                <font>
                   <Font name="Century" size="14.0" />
                </font>

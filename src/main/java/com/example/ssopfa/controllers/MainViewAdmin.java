@@ -18,6 +18,9 @@ public class MainViewAdmin {
     private Button toPizzas;
 
     @FXML
+    private Button editButton;
+
+    @FXML
     private Label name;
 
     @FXML
@@ -34,6 +37,11 @@ public class MainViewAdmin {
     @FXML
     private void onPizzas(ActionEvent event) {
         Main.showAdminPizzas();
+    }
+
+    @FXML
+    private void onEdit(ActionEvent event) {
+        Main.showEditPizzas();
     }
 
     @FXML

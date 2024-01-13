@@ -58,7 +58,7 @@ public class AdminUsers {
     private void onDel() throws IOException {
         User selectedUser = userTableView.getSelectionModel().getSelectedItem();
         if (selectedUser != null) {
-            if (selectedUser.getClass()==Admin.class) {
+            if (selectedUser.getClass() == Admin.class) {
                 Alerts.showNotificationAlert("Вы не можете удалить администратора!");
                 Main.showAdminUsers();
             } else {
@@ -75,11 +75,10 @@ public class AdminUsers {
     private void onUpgrade() throws IOException {
         User selectedUser = userTableView.getSelectionModel().getSelectedItem();
         if (selectedUser != null) {
-            if (selectedUser.getClass()==Admin.class) {
+            if (selectedUser.getClass() == Admin.class) {
                 Alerts.showNotificationAlert("Уже администратор!");
                 Main.showAdminUsers();
-            }
-            else {
+            } else {
                 Admin.setExactUserToAdmin(selectedUser.getLogin(), selectedUser.getPassword(), selectedUser.isHasAccess());
                 Alerts.showSuccessAlert("Пользователь " + selectedUser.getLogin() + " успешно повышен до администратора!");
                 Main.showAdminUsers();
@@ -93,7 +92,7 @@ public class AdminUsers {
     private void onAccess() throws IOException {
         User selectedUser = userTableView.getSelectionModel().getSelectedItem();
         if (selectedUser != null) {
-            if (selectedUser.getClass()==Admin.class) {
+            if (selectedUser.getClass() == Admin.class) {
                 Alerts.showNotificationAlert("Нельзя забрать доступ у администратора!");
                 Main.showAdminUsers();
             } else {

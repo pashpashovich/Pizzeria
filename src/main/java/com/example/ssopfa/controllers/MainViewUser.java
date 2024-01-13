@@ -24,8 +24,6 @@ public class MainViewUser {
     @FXML
     public void initialize() {
         name.setText(Main.getCustomer().getLogin());
-        System.out.println(Main.getCustomer().getFIO());
-        System.out.println(Main.getCustomer().getCart());
     }
 
     @FXML

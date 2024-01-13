@@ -4,8 +4,6 @@ import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
-import java.util.stream.Collectors;
 
 public class Admin extends User implements Serializable {
     private static ArrayList<User> users;
@@ -13,29 +11,11 @@ public class Admin extends User implements Serializable {
     public Admin(String login, String password, boolean hasAccess) {
         super(login, password, hasAccess);
     }
-//    public void addToList(PizzaList list){
-//        list.addToList();
-//    }
-//    public void removeFromList(PizzaList list){
-//        list.removeFromList();
-//    }
 
     public static ArrayList<User> getUsers() {
         users = SerializationOfUsers.deserializator();
         return users;
     }
-
-    public static ArrayList<User> getNowUsers() {
-        return users;
-    }
-
-    public static List<Customer> getCustomers() {
-        return getNowUsers().stream()
-                .filter(user -> user instanceof Customer)
-                .map(user -> (Customer) user)
-                .collect(Collectors.toList());
-    }
-
 
     public static User getExactUser(String login, String password) {
         getUsers();
@@ -55,7 +35,7 @@ public class Admin extends User implements Serializable {
                 }
             }
         }
-        SerializationOfUsers.serializator((ArrayList<User>) users);
+        SerializationOfUsers.serializator(users);
     }
 
     public static void resetExactCustomer(Customer customer) throws IOException {
@@ -67,10 +47,11 @@ public class Admin extends User implements Serializable {
         }
         users.remove(delUser);
         users.add(customer);
-        SerializationOfUsers.serializator((ArrayList<User>) users);
+        SerializationOfUsers.serializator(users);
     }
+
     public static boolean isUniqueLogin(String login) {
-        users = (ArrayList<User>) getUsers();
+        users = getUsers();
         for (User user : users) {
             if (login.equals(user.getLogin()))
                 return false;
@@ -79,8 +60,8 @@ public class Admin extends User implements Serializable {
     }
 
     public static void addUser(String login, String password, String FIO) throws IOException {
-        users.add(new Customer(login, password, FIO, false,null));
-        SerializationOfUsers.serializator((ArrayList<User>) users);
+        users.add(new Customer(login, password, FIO, false, null));
+        SerializationOfUsers.serializator(users);
     }
 
     public static void delExactUser(String login, String password) throws IOException {
@@ -91,7 +72,7 @@ public class Admin extends User implements Serializable {
                 delUser = user;
         }
         users.remove(delUser);
-        SerializationOfUsers.serializator((ArrayList<User>) users);
+        SerializationOfUsers.serializator(users);
     }
 
     public static void setExactUserToAdmin(String login, String password, boolean hasAccess) throws IOException {
@@ -106,7 +87,7 @@ public class Admin extends User implements Serializable {
         }
         users.remove(delUser);
         users.add(newAdmin);
-        SerializationOfUsers.serializator((ArrayList<User>) users);
+        SerializationOfUsers.serializator(users);
     }
 
     public static void changeAccessExactUser(String login, String password) throws IOException {
@@ -117,9 +98,9 @@ public class Admin extends User implements Serializable {
             if (user.getLogin().equals(login) && user.getPassword().equals(password) && user.getClass() == Customer.class) {
                 user.setHasAccess(!user.isHasAccess());
                 iterator.remove();
-                User chUser = new Customer(user.getLogin(), user.getPassword(), ((Customer) user).getFIO(), user.isHasAccess(),((Customer) user).getCart());
+                User chUser = new Customer(user.getLogin(), user.getPassword(), ((Customer) user).getFIO(), user.isHasAccess(), ((Customer) user).getCart());
                 users.add(chUser);
-                SerializationOfUsers.serializator((ArrayList<User>) users);
+                SerializationOfUsers.serializator(users);
                 break;
             }
         }

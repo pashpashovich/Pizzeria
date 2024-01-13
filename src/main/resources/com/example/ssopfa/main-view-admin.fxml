@@ -14,28 +14,33 @@
     <children>
         <AnchorPane layoutY="85.0" prefHeight="315.0" prefWidth="700.0" style="-fx-background-color: #D2F4FF;" styleClass="sidebar" stylesheets="@style.css" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="85.0">
          <children>
-            <AnchorPane layoutX="141.0" layoutY="14.0" prefHeight="78.0" prefWidth="420.0" styleClass="col">
+            <AnchorPane layoutX="80.0" layoutY="14.0" prefHeight="52.0" prefWidth="570.0" styleClass="col" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="50.60000000000002">
                <children>
-                  <Label layoutX="9.0" layoutY="7.0" text="Добро пожаловать, администратор" textFill="#ffa100">
+                  <Label layoutX="9.0" layoutY="7.0" text="Добро пожаловать, администратор" textFill="#ffa100" AnchorPane.leftAnchor="9.0" AnchorPane.rightAnchor="159.0">
                      <font>
                         <Font name="Century" size="24.0" />
                      </font>
                   </Label>
-                  <Label fx:id="name" layoutX="96.0" layoutY="39.0" prefHeight="30.0" prefWidth="227.0" textAlignment="CENTER" textFill="#ffa100">
+                  <Label fx:id="name" layoutX="419.0" layoutY="11.0" prefHeight="30.0" prefWidth="130.0" textAlignment="JUSTIFY" textFill="#ffa100" AnchorPane.rightAnchor="21.0">
                      <font>
                         <Font name="Century" size="24.0" />
                      </font>
                   </Label>
                </children></AnchorPane>
-            <Button fx:id="toUsers" onAction="#onUsers" layoutX="259.0" layoutY="120.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="184.0" text="Пользователи">
+            <Button fx:id="toUsers" layoutX="245.0" layoutY="87.0" mnemonicParsing="false" onAction="#onUsers" prefHeight="52.0" prefWidth="231.0" text="Пользователи" AnchorPane.leftAnchor="245.0" AnchorPane.rightAnchor="225.0">
                <font>
                   <Font name="Century" size="18.0" />
                </font>
             </Button>
-            <Button fx:id="toPizzas" onAction="#onPizzas" layoutX="263.0" layoutY="201.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="175.0" text="Пиццы">
+            <Button fx:id="toPizzas" layoutX="245.0" layoutY="158.0" mnemonicParsing="false" onAction="#onPizzas" prefHeight="52.0" prefWidth="231.0" text="Пиццы" AnchorPane.leftAnchor="245.0" AnchorPane.rightAnchor="225.0">
                <font>
                   <Font name="Century" size="18.0" />
                </font></Button>
+            <Button fx:id="editButton" onAction="#onEdit" layoutX="249.0" layoutY="229.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="231.0" text="Редактировать пиццы">
+               <font>
+                  <Font name="Century" size="18.0" />
+               </font>
+            </Button>
          </children>
         </AnchorPane>
         <Label alignment="CENTER" contentDisplay="CENTER" layoutX="230.0" layoutY="2.0" prefHeight="85.0" prefWidth="239.0" text="Пиццерия" textFill="#ffa100" AnchorPane.leftAnchor="230.0" AnchorPane.rightAnchor="230.0" AnchorPane.topAnchor="2.0">
@@ -43,7 +48,7 @@
                 <Font name="Century" size="39.0" />
             </font>
         </Label>
-        <Button fx:id="exitButton" focusTraversable="false" layoutX="540.0" layoutY="25.0" mnemonicParsing="false" onAction="#onExit" prefHeight="35.0" prefWidth="138.0" stylesheets="@style.css" text="Выход" textFill="WHITE" AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="25.0">
+        <Button fx:id="exitButton" focusTraversable="false" layoutX="540.0" layoutY="25.0" mnemonicParsing="false" onAction="#onExit" prefHeight="35.0" prefWidth="138.0" stylesheets="@style.css" text="Выход" AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="25.0">
             <font>
                 <Font name="Century" size="18.0" />
             </font>

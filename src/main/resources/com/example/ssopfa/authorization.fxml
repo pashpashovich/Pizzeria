@@ -10,26 +10,59 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ssopfa.controllers.AuthController">
+<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ssopfa.controllers.AuthController">
     <children>
         <AnchorPane layoutY="88.0" prefHeight="315.0" prefWidth="700.0" style="-fx-background-color: #D2F4FF;" styleClass="sidebar" stylesheets="@style.css" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="85.0">
             <children>
-                <VBox prefHeight="316.0" prefWidth="701.0">
-                    <children>
-                        <HBox prefHeight="271.0" prefWidth="689.0" />
-                    </children>
-                </VBox>
-                <Pane layoutX="165.0" layoutY="20.0" prefHeight="271.0" prefWidth="372.0" styleClass="col">
-                    <children>
-                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="86.0" layoutY="14.0" prefHeight="12.0" prefWidth="203.0" text="Авторизация" textFill="#ffa100">
+            <AnchorPane layoutX="164.0" layoutY="37.0" prefHeight="265.0" prefWidth="374.0" styleClass="col" AnchorPane.bottomAnchor="13.399999999999977" AnchorPane.leftAnchor="164.0" AnchorPane.rightAnchor="162.60000000000002" AnchorPane.topAnchor="37.0">
+               <children>
+                  <Label layoutX="73.0" layoutY="233.0" text="Нет аккаунта?" textFill="#ffa100" AnchorPane.leftAnchor="73.0">
+                     <font>
+                        <Font name="Century" size="14.0" />
+                     </font>
+                  </Label>
+                    <Button fx:id="signUpButton" focusTraversable="false" layoutX="173.0" layoutY="228.0" mnemonicParsing="false" onAction="#onSignUpButtonClick" prefHeight="18.0" prefWidth="125.0" stylesheets="@style.css" text="Регистрируйся" AnchorPane.leftAnchor="173.0" AnchorPane.rightAnchor="75.79999999999995">
+                        <font>
+                            <Font name="Century" size="14.0" />
+                        </font>
+                        <cursor>
+                            <Cursor fx:constant="HAND" />
+                        </cursor>
+                        <effect>
+                            <InnerShadow>
+                                <color>
+                                    <Color red="1.0" green="1.0" blue="1.0" />
+                                </color>
+                        </InnerShadow>
+                        </effect>
+                    </Button>
+                        <Label layoutX="57.0" layoutY="114.0" text="Введите Ваш пароль" textFill="#ffa100" AnchorPane.leftAnchor="57.0" AnchorPane.rightAnchor="114.19999999999999">
                             <font>
-                                <Font name="Century" size="24.0" />
+                                <Font name="Century" size="14.0" />
                             </font>
-                            <effect>
-                                <Glow level="0.0" />
-                            </effect>
                         </Label>
-                        <Button fx:id="authButton" layoutX="63.0" layoutY="193.0" mnemonicParsing="false" onAction="#onAuthButtonClick" prefHeight="20.0" prefWidth="246.0" stylesheets="@style.css" text="Войти" textFill="WHITE">
+                        <Label layoutX="57.0" layoutY="47.0" text="Введите Ваш логин" textFill="#ffa100" AnchorPane.leftAnchor="57.0" AnchorPane.rightAnchor="114.19999999999999">
+                            <font>
+                                <Font name="Century" size="14.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="loginField" focusTraversable="false" layoutX="50.0" layoutY="66.0" prefHeight="30.0" prefWidth="246.0" promptText="Логин" styleClass="fields" stylesheets="@style.css" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="77.99999999999997">
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                            <cursor>
+                                <Cursor fx:constant="TEXT" />
+                            </cursor>
+                        </TextField>
+                        <PasswordField fx:id="passwordField" focusTraversable="false" layoutX="50.0" layoutY="133.0" prefHeight="30.0" prefWidth="246.0" promptText="Пароль" styleClass="fields" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="77.99999999999997">
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                            <cursor>
+                                <Cursor fx:constant="TEXT" />
+                            </cursor>
+                        </PasswordField>
+                        <Button fx:id="authButton" layoutX="73.0" layoutY="179.0" mnemonicParsing="false" onAction="#onAuthButtonClick" prefHeight="36.0" prefWidth="226.0" stylesheets="@style.css" text="Войти" AnchorPane.leftAnchor="73.0" AnchorPane.rightAnchor="75.0">
                             <font>
                                 <Font name="Century" size="18.0" />
                             </font>
@@ -44,59 +77,44 @@
                                 </InnerShadow>
                             </effect>
                         </Button>
-                        <PasswordField fx:id="passwordField" focusTraversable="false" layoutX="64.0" layoutY="136.0" prefHeight="30.0" prefWidth="246.0" promptText="Пароль" styleClass="fields">
+                        <Label fx:id="authLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="85.0" layoutY="-1.0" prefHeight="12.0" prefWidth="203.0" text="Авторизация" textFill="#ffa100" AnchorPane.leftAnchor="85.0" AnchorPane.rightAnchor="86.19999999999999">
                             <font>
-                                <Font size="15.0" />
+                                <Font name="Century" size="24.0" />
                             </font>
-                            <cursor>
-                                <Cursor fx:constant="TEXT" />
-                            </cursor>
-                        </PasswordField>
-                        <TextField fx:id="loginField" focusTraversable="false" layoutX="63.0" layoutY="79.0" prefHeight="30.0" prefWidth="246.0" promptText="Логин" styleClass="fields" stylesheets="@style.css">
-                            <font>
-                                <Font size="15.0" />
-                            </font>
-                            <cursor>
-                                <Cursor fx:constant="TEXT" />
-                            </cursor>
-                        </TextField>
-                        <Label layoutX="72.0" layoutY="58.0" text="Введите Ваш логин" textFill="#ffa100">
-                            <font>
-                                <Font name="Century" size="14.0" />
-                            </font>
+                            <effect>
+                                <Glow level="0.0" />
+                            </effect>
                         </Label>
-                        <Label layoutX="67.0" layoutY="115.0" text="Введите Ваш пароль" textFill="#ffa100">
-                            <font>
-                                <Font name="Century" size="14.0" />
-                            </font>
-                        </Label>
-                    </children></Pane>
+               </children>
+            </AnchorPane>
             </children>
         </AnchorPane>
-        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="230.0" layoutY="2.0" prefHeight="85.0" prefWidth="239.0" text="Пиццерия" textFill="#ffa100" AnchorPane.leftAnchor="230.0" AnchorPane.rightAnchor="230.0" AnchorPane.topAnchor="2.0">
+        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="230.0" layoutY="2.0" prefHeight="85.0" prefWidth="239.0" styleClass="h" stylesheets="@style.css" text="Пиццерия" textFill="#ffa100" AnchorPane.leftAnchor="230.0" AnchorPane.rightAnchor="230.0" AnchorPane.topAnchor="2.0">
             <font>
                 <Font name="Century" size="39.0" />
             </font>
         </Label>
-        <Button fx:id="signUpButton" focusTraversable="false" layoutX="540.0" layoutY="25.0" mnemonicParsing="false" onAction="#onSignUpButtonClick" prefHeight="35.0" prefWidth="138.0" stylesheets="@style.css" text="Регистрация" textFill="WHITE" AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="25.0">
-            <font>
-                <Font name="Century" size="18.0" />
-            </font>
-            <cursor>
-                <Cursor fx:constant="HAND" />
-            </cursor>
-            <effect>
-                <InnerShadow>
-                    <color>
-                        <Color red="1.0" green="1.0" blue="1.0" />
-                    </color></InnerShadow>
-            </effect>
-        </Button>
-        <ImageView fitHeight="85.0" fitWidth="100.0" layoutX="38.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <ImageView fitHeight="55.0" fitWidth="61.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="18.0">
             <image>
                 <Image url="@../../../images/logo.png" />
             </image>
         </ImageView>
+      <Button fx:id="exit" layoutX="578.0" layoutY="26.0" mnemonicParsing="false" onAction="#toExit" prefHeight="40.0" prefWidth="108.0" text="Выход" AnchorPane.rightAnchor="14.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <GridPane>
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+      </GridPane>
     </children>
     <stylesheets>
         <URL value="@style.css" />

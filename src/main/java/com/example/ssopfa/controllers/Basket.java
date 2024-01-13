@@ -50,9 +50,9 @@ public class Basket {
 
     @FXML
     public void initialize() {
-        customer= (Customer) Main.getCustomer();
+        customer = (Customer) Main.getCustomer();
         List<Pizza> cart = customer.getCart();
-        if (cart==null) cart=new ArrayList<>();
+        if (cart == null) cart = new ArrayList<>();
         ObservableList<Pizza> pizzaObservableList = FXCollections.observableArrayList(cart);
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
@@ -74,7 +74,7 @@ public class Basket {
 
     @FXML
     private void deletePizza(ActionEvent event) throws IOException {
-        customer= (Customer) Main.getCustomer();
+        customer = (Customer) Main.getCustomer();
         Pizza selectedPizza = pizzaTableView.getSelectionModel().getSelectedItem();
         if (selectedPizza != null) {
             customer.removeFromCart(selectedPizza.getName(), selectedPizza.getSize(), selectedPizza.getPrice());

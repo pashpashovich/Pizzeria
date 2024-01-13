@@ -1,5 +1,5 @@
 package com.example.ssopfa.entities;
 
-interface Calculable{
+interface Calculable {
     double calculate(Pizza p);
 }

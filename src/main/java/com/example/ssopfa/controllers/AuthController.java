@@ -9,6 +9,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 
 import java.io.IOException;
 
@@ -29,6 +31,9 @@ public class AuthController {
     private Button signUpButton;
 
     @FXML
+    private Button exit;
+
+    @FXML
     private void onAuthButtonClick(ActionEvent event) throws IOException {
         String login = loginField.getText();
         String password = passwordField.getText();
@@ -46,7 +51,7 @@ public class AuthController {
             Alerts.showNotificationAlert("У вас нет доступа в систему(");
             return;
         }
-        Admin.setExactUser(user.getLogin(),user.getPassword(),user.isHasAccess());
+        Admin.setExactUser(user.getLogin(), user.getPassword(), user.isHasAccess());
         if (user.getClass().equals(Admin.class)) {
             Main.setAdmin((Admin) user);
             Main.showMainViewAdmin();
@@ -59,5 +64,10 @@ public class AuthController {
     @FXML
     private void onSignUpButtonClick(ActionEvent event) {
         Main.showSignUp();
+    }
+
+    @FXML
+    private void toExit(ActionEvent event) {
+        System.exit(0);
     }
 }

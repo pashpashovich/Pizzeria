@@ -14,19 +14,65 @@
     <children>
         <AnchorPane layoutY="85.0" prefHeight="315.0" prefWidth="700.0" style="-fx-background-color: #D2F4FF;" styleClass="sidebar" stylesheets="@style.css" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="85.0">
             <children>
-                <Button fx:id="toMain" layoutX="22.0" layoutY="232.0" mnemonicParsing="false" onAction="#onMain" prefHeight="55.0" prefWidth="188.0" text="Выход в главное меню">
-                    <font>
-                        <Font name="Century" size="14.0" />
-                    </font>
-                </Button>
-                <TableView fx:id="pizzaTableView" layoutX="14.0" layoutY="42.0" prefHeight="167.0" prefWidth="464.0">
+                <TableView fx:id="pizzaTableView" layoutX="14.0" layoutY="14.0" prefHeight="167.0" prefWidth="464.0" styleClass="table" AnchorPane.leftAnchor="14.0">
                     <columns>
                         <TableColumn fx:id="nameColumn" prefWidth="153.19998168945312" text="Название" />
                         <TableColumn fx:id="sizeColumn" minWidth="0.0" prefWidth="161.59999084472656" text="Размер" />
                         <TableColumn fx:id="priceColumn" minWidth="0.0" prefWidth="159.20001220703125" text="Цена" />
                     </columns>
                 </TableView>
-            <Button fx:id="addToBusket" onAction="#toBusket" layoutX="223.0" layoutY="232.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="171.0" text="Добавить в корзину" />
+            <AnchorPane layoutX="493.0" layoutY="10.0" prefHeight="115.0" prefWidth="199.0" styleClass="col" AnchorPane.leftAnchor="493.0" AnchorPane.rightAnchor="8.800000000000011" AnchorPane.topAnchor="9.999999999999986">
+               <children>
+                  <Button fx:id="descSorting" layoutX="8.0" layoutY="77.0" mnemonicParsing="false" onAction="#handleDesSorting" prefHeight="23.0" prefWidth="182.0" text="Сортировать по убыванию" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.799999999999983" />
+                  <Button fx:id="ascSorting" layoutX="8.0" layoutY="34.0" mnemonicParsing="false" onAction="#handleSorting" text="Сортировать по возрастанию" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" />
+                  <Label layoutX="13.0" layoutY="2.0" text="Сортировка по цене" textFill="#ffa100" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="13.399999999999977">
+                     <font>
+                        <Font name="Century" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="493.0" layoutY="132.0" prefHeight="167.0" prefWidth="199.0" styleClass="col" AnchorPane.leftAnchor="493.0" AnchorPane.rightAnchor="9.0">
+               <children>
+                  <Label layoutX="42.0" layoutY="2.0" prefHeight="23.0" prefWidth="115.0" text="Фильтрация" textFill="#ffa100" AnchorPane.leftAnchor="42.0" AnchorPane.rightAnchor="42.0">
+                     <font>
+                        <Font name="Century" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="fromVal" layoutX="3.0" layoutY="43.0" prefHeight="23.0" prefWidth="182.0" promptText="Начальное значение" styleClass="fields" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="13.599999999999994" />
+                  <TextField fx:id="toVal" layoutX="2.0" layoutY="89.0" prefHeight="23.0" prefWidth="182.0" promptText="Конечное значение" styleClass="fields" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="13.599999999999994" />
+                  <Label layoutX="8.0" layoutY="25.0" prefHeight="18.0" prefWidth="183.0" text="Введите начало диапазона" textFill="#ffa100" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="9.0">
+                     <font>
+                        <Font name="Century" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="7.0" layoutY="74.0" text="Введите конец диапазона" textFill="#ffa100" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="18.400000000000006">
+                     <font>
+                        <Font name="Century" size="14.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="priceButton" layoutX="100.0" layoutY="125.0" mnemonicParsing="false" onAction="#handlePriceFiltering" prefHeight="23.0" prefWidth="82.0" text="По цене" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="16.599999999999994" />
+                  <Button fx:id="sizeButton" layoutX="8.0" layoutY="125.0" mnemonicParsing="false" onAction="#handleSizeFiltering" text="По размеру" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="108.6" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="24.0" layoutY="185.0" prefHeight="124.0" prefWidth="433.0" styleClass="col" AnchorPane.leftAnchor="24.0" AnchorPane.topAnchor="185.0">
+               <children>
+                  <Button fx:id="back" layoutX="217.0" layoutY="14.0" mnemonicParsing="false" onAction="#backInfo" prefHeight="42.0" prefWidth="173.0" text="Вернуть данные" AnchorPane.rightAnchor="43.0">
+                     <font>
+                        <Font name="Century" size="14.0" />
+                     </font>
+                  </Button>
+                      <Button fx:id="toMain" layoutX="98.0" layoutY="67.0" mnemonicParsing="false" onAction="#onMain" prefHeight="42.0" prefWidth="199.0" text="Выход в главное меню" AnchorPane.leftAnchor="98.0" AnchorPane.rightAnchor="137.0">
+                          <font>
+                              <Font name="Century" size="14.0" />
+                          </font>
+                      </Button>
+                  <Button fx:id="addToBusket" layoutX="23.0" layoutY="14.0" mnemonicParsing="false" onAction="#toBusket" prefHeight="42.0" prefWidth="174.0" text="Добавить в корзину">
+                     <font>
+                        <Font name="Century" size="14.0" />
+                     </font>
+                  </Button>
+               </children></AnchorPane>
             </children>
         </AnchorPane>
         <Label alignment="CENTER" contentDisplay="CENTER" layoutX="230.0" layoutY="2.0" prefHeight="85.0" prefWidth="239.0" text="Пиццерия" textFill="#ffa100" AnchorPane.leftAnchor="230.0" AnchorPane.rightAnchor="230.0" AnchorPane.topAnchor="2.0">
