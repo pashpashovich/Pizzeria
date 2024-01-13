@@ -25,6 +25,18 @@ public class Pizza implements Serializable {
         return size;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public void setSize(double size) {
+        this.size = size;
+    }
+
     @Override
     public String toString(){
         return "Название: " + name+" Размер: " + size + " Цена: " + price;

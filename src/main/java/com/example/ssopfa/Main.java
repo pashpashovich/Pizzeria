@@ -51,8 +51,14 @@ public class Main extends Application {
 //        arrayList.add(new Customer("ssopfa4","ssopfa3","Ахрамович НеСофья НеПавловна",false,null));
 //        arrayList.add(new Customer("ssopfa5","ssopfa4","Ахрамович Софья НеПавловна",false,null));
 //        SerializationOfUsers.serializator((ArrayList<User>) arrayList);
-//        PizzaList pizzaList = new PizzaList();
-//        SerializationOfPizzas.serializator((ArrayList<Pizza>) PizzaList.getPizzaList());
+//        ArrayList<Pizza> pizza = new ArrayList<>();
+//        pizza.add(new Pizza("Маргарита",23,23));
+//        pizza.add(new Pizza("Римская",23,23));
+//        pizza.add(new Pizza("Студенческая",23,23));
+//        pizza.add(new Pizza("Пепперони",23,23));
+//        pizza.add(new Pizza("4 сыра",23,23));
+//        SerializationOfPizzas.serializator(pizza);
+        PizzaList pizzaList=new PizzaList();
         primaryStage = stage;
         Image image = new Image(Objects.requireNonNull(getClass().getResource("/images/logo.png")).toExternalForm());
         stage.getIcons().add(image);

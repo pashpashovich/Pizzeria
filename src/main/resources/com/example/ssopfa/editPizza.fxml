@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ssopfa.controllers.EditPizzaController">
+    <children>
+        <AnchorPane layoutY="85.0" prefHeight="315.0" prefWidth="700.0" style="-fx-background-color: #D2F4FF;" styleClass="sidebar" stylesheets="@style.css" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="85.0">
+            <children>
+            <AnchorPane layoutX="167.0" layoutY="13.0" prefHeight="295.0" prefWidth="367.0" styleClass="col" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="167.0" AnchorPane.rightAnchor="167.0" AnchorPane.topAnchor="13.0">
+               <children>
+                        <TextField fx:id="editPriceField" layoutX="67.0" layoutY="203.0" prefHeight="23.0" prefWidth="240.0" promptText="Цена" styleClass="fields" AnchorPane.leftAnchor="67.0" AnchorPane.rightAnchor="59.39999999999998" />
+                        <Label layoutX="71.0" layoutY="184.0" prefHeight="18.0" prefWidth="154.0" text="Введите цену (в BYN)" textFill="#ffa100" AnchorPane.leftAnchor="72.0" AnchorPane.rightAnchor="94.39999999999998">
+                            <font>
+                                <Font name="Century" size="14.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="editSizeField" layoutX="67.0" layoutY="147.0" prefHeight="23.0" prefWidth="240.0" promptText="Размер" styleClass="fields" AnchorPane.leftAnchor="67.0" AnchorPane.rightAnchor="59.39999999999998" />
+                        <Label layoutX="72.0" layoutY="128.0" prefHeight="18.0" prefWidth="200.0" text="Введите новый размер (в см)" textFill="#ffa100" AnchorPane.leftAnchor="72.0" AnchorPane.rightAnchor="94.39999999999998">
+                            <font>
+                                <Font name="Century" size="14.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="editNameField" layoutX="71.0" layoutY="93.0" prefHeight="23.0" prefWidth="232.0" promptText="Название" styleClass="fields" AnchorPane.leftAnchor="71.0" AnchorPane.rightAnchor="63.39999999999998" />
+                        <Label layoutX="71.0" layoutY="75.0" prefHeight="18.0" prefWidth="187.0" text="Введите новое название" textFill="#ffa100" AnchorPane.leftAnchor="71.0" AnchorPane.rightAnchor="108.19999999999999">
+                            <font>
+                                <Font name="Century" size="14.0" />
+                            </font>
+                        </Label>
+                        <ComboBox fx:id="pizzaComboBox" layoutX="97.0" layoutY="40.0" prefWidth="150.0" AnchorPane.leftAnchor="97.0" AnchorPane.rightAnchor="118.99999999999997" />
+      
+                        <Label layoutX="71.0" lineSpacing="4.0" prefHeight="28.0" prefWidth="232.0" text="Редактировать пиццу" textFill="#ffa100" AnchorPane.leftAnchor="71.0" AnchorPane.rightAnchor="63.39999999999998">
+                            <font>
+                                <Font name="Century" size="22.0" />
+                            </font>
+                        </Label>
+                        <Button fx:id="saveButton" layoutX="110.0" layoutY="244.0" mnemonicParsing="false" onAction="#saveChanges" prefHeight="36.0" prefWidth="154.0" text="Изменить" textAlignment="CENTER" AnchorPane.leftAnchor="109.99999999999997" AnchorPane.rightAnchor="101.99999999999997">
+                            <font>
+                                <Font name="Century" size="14.0" />
+                            </font>
+                        </Button>
+               </children></AnchorPane>
+            </children>
+        </AnchorPane>
+        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="230.0" layoutY="2.0" prefHeight="85.0" prefWidth="239.0" text="Пиццерия" textFill="#ffa100" AnchorPane.leftAnchor="230.0" AnchorPane.rightAnchor="230.0" AnchorPane.topAnchor="2.0">
+            <font>
+                <Font name="Century" size="39.0" />
+            </font>
+        </Label>
+        <Button fx:id="exitButton" focusTraversable="false" layoutX="540.0" layoutY="25.0" mnemonicParsing="false" onAction="#onExit" prefHeight="35.0" prefWidth="138.0" stylesheets="@style.css" text="Выход" AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="25.0">
+            <font>
+                <Font name="Century" size="18.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+            <effect>
+                <InnerShadow>
+                    <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                    </color></InnerShadow>
+            </effect>
+        </Button>
+        <ImageView fitHeight="75.0" fitWidth="76.0" layoutX="14.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="11.0">
+            <image>
+                <Image url="@../../../images/logo.png" />
+            </image>
+        </ImageView>
+    </children>
+    <stylesheets>
+        <URL value="@style.css" />
+        <URL value="@style.css" />
+    </stylesheets>
+    <styleClass>
+        <String fx:value="col" />
+        <String fx:value="root" />
+    </styleClass>
+</AnchorPane>
